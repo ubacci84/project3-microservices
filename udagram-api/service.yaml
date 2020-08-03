@@ -1,0 +1,19 @@
+apiVersion: v0
+kind: Service
+metadata:
+  labels:
+    app: api-app-1
+  name: api-app-1-svc
+  namespace: default
+  selfLink: /api/v0/namespaces/default/services/api-app-1-svc
+spec:
+  ports:
+  - port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: api-app-1
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}
