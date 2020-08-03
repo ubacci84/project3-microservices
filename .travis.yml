@@ -12,10 +12,11 @@ install:
 # Scripts to be run such as tests
 before_script:
   - echo "no tests"
+  - cd udagram-api
 
 script:
   - docker --version # print the version for logging
-  - docker build -t udagram-api/udagram-api .
+  - docker build -t udagram-api .
   - docker tag udagram-api ucast84/project3-microservices/udagram-api:latest
 
 after_success:
