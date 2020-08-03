@@ -16,9 +16,9 @@ before_script:
 script:
   - docker --version # print the version for logging
   - docker build -t udagram-api/udagram-api .
-  - docker tag simple-express ucast84/project3-microservices/udagram-api:latest
+  - docker tag udagram-api ucast84/project3-microservices/udagram-api:latest
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push ucast84/simple-express
+  - docker push ucast84/project3-microservices/udagram-api
 
