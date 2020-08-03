@@ -15,7 +15,7 @@ before_script:
 
 script:
   - docker --version # print the version for logging
-  - docker build -t ./udagram-api/udagram-api .
+  - docker build -t udagram-api/udagram-api .
   - docker tag simple-express ucast84/project3-microservices/udagram-api:latest
 
 after_success:
