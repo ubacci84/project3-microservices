@@ -69,7 +69,7 @@ router.post('/login', async (req: Request, res: Response) => {
     return res.status(401).send({auth: false, message: 'User was not found..'});
   }
 
-  const authValid = await comparePasswords(password, user.passwordHash);
+  const authValid = await comparePasswords(password, user.password_hash);
 
   if (!authValid) {
     return res.status(401).send({auth: false, message: 'Password was invalid.'});
@@ -101,7 +101,7 @@ router.post('/', async (req: Request, res: Response) => {
 
   const newUser = await new User({
     email: email,
-    passwordHash: generatedHash,
+    password_hash: generatedHash,
   });
 
   const savedUser = await newUser.save();
