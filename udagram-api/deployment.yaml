@@ -1,4 +1,4 @@
-apiVersion: apps/v0
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: api-app-1
@@ -16,12 +16,12 @@ spec:
     spec:
       containers:
       - name: udagram-api
-        image: ucast84/project3-microservices/udagram-api
+        image: ucast84/udagram-api
         ports:
         - containerPort: 8080
         livenessProbe:
           httpGet:
             path: /api/v0
             port: 8080
-          initialDelaySeconds: 3
-          periodSeconds: 3
+          initialDelaySeconds: 100
+          periodSeconds: 20
