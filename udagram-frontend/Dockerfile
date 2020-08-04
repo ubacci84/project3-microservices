@@ -20,5 +20,5 @@ EXPOSE 8100
 # Define the Docker image's behavior at runtime
 #CMD ["node", "server.js"]
 #CMD [ "npm", "run", "dev" ]
-#CMD [ "ionic", "serve"]
-RUN ionic build
+CMD [ "ionic", "build"]
+
