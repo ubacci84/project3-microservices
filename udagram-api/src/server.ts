@@ -25,7 +25,7 @@ import {V0_FEED_MODELS, V0_USER_MODELS} from './controllers/v0/model.index';
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
     next();
   });
-/*
+/* ORIGIN
   app.use(cors({
     allowedHeaders: [
       'Origin', 'X-Requested-With',
