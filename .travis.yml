@@ -13,14 +13,17 @@ install:
 before_script:
   - echo "no tests"
 #  - cd udagram-api
-  - cd udagram-frontend
+#  - cd udagram-frontend
+  - cd udagram-api-user
 
 script:
   - docker --version # print the version for logging
 #  - docker build -t udagram-api .
 #  - docker tag udagram-api ucast84/udagram-api:latest
-  - docker build -t udagram-frontend .
-  - docker tag udagram-frontend ucast84/udagram-frontend:latest
+#  - docker build -t udagram-frontend .
+#  - docker tag udagram-frontend ucast84/udagram-frontend:latest
+  - docker build -t udagram-api-user .
+  - docker tag udagram-api ucast84/udagram-api-user:latest
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin

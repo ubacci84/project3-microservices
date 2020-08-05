@@ -35,3 +35,5 @@ UserInterfaceState.xcuserstate
 node_modules
 
 commit_msg.txt
+env-configmap.yaml
+env-secret.yaml

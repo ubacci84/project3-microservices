@@ -1,21 +1,31 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: frontend-app
+  name: udagram-frontend
   labels:
-    app: frontend-app
+    service: udagram-frontend
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: frontend-app
+      service: udagram-frontend
   template:
     metadata:
       labels:
-        app: frontend-app
+        service: udagram-frontend
+        api: external
     spec:
       containers:
       - name: udagram-frontend
         image: ucast84/udagram-frontend
+        imagePullPolicy: Always 
         ports:
-        - containerPort: 8100
+        - containerPort: 80
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "1024Mi"
+            cpu: "500m"                
+      restartPolicy: Always

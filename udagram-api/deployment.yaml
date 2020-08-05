@@ -65,5 +65,3 @@ spec:
               configMapKeyRef:
                 name: env-config
                 key: POSTGRESS_USERNAME
-
-    
