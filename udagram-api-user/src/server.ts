@@ -19,13 +19,6 @@ import {V0_FEED_MODELS, V0_USER_MODELS} from './controllers/v0/model.index';
 
   app.use(bodyParser.json());
 
-  //CORS Should be restricted
-  app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "http://localhost:8100");
-    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
-    next();
-  });
-/* ORIGIN
   app.use(cors({
     allowedHeaders: [
       'Origin', 'X-Requested-With',
@@ -35,7 +28,7 @@ import {V0_FEED_MODELS, V0_USER_MODELS} from './controllers/v0/model.index';
     methods: 'GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE',
     origin: config.url,
   }));
-*/
+
   app.use('/api/v0/', IndexRouter);
 
   // Root URI call

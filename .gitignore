@@ -1,3 +1,8 @@
 commit_msg.txt
 env-configmap.yaml
 env-secret.yaml
+
+travis-feed.yml
+travis-user.yml
+travis-front.yml
+travis-reverse.yml
