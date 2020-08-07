@@ -12,17 +12,17 @@ install:
 # Scripts to be run such as tests
 before_script:
   - echo "no tests"
-  - cd udagram-api-feed
-#  - cd udagram-frontend
+#  - cd udagram-api-feed
+  - cd udagram-frontend
 #  - cd udagram-api-user
 #  - cd udagram-reverse
 
 script:
   - docker --version # print the version for logging
-  - docker build -t udagram-api-feed .
-  - docker tag udagram-api-feed ucast84/udagram-api-feed:latest
-#  - docker build -t udagram-frontend .
-#  - docker tag udagram-frontend ucast84/udagram-frontend:latest
+#  - docker build -t udagram-api-feed .
+#  - docker tag udagram-api-feed ucast84/udagram-api-feed:latest
+  - docker build -t udagram-frontend .
+  - docker tag udagram-frontend ucast84/udagram-frontend:latest
 #  - docker build -t udagram-api-user .
 #  - docker tag udagram-api-user ucast84/udagram-api-user:latest
 #  - docker build -t udagram-reverse .
@@ -30,4 +30,4 @@ script:
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push ucast84/udagram-api-feed
+  - docker push ucast84/udagram-frontend
