@@ -44,4 +44,5 @@ venv/
 commit_msg.txt
 env-configmap.yaml
 env-secret.yaml
+aws-secret.yaml
 
