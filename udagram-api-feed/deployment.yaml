@@ -17,6 +17,14 @@ spec:
       containers:
       - name: udagram-api-feed
         image: ucast84/udagram-api-feed
+        imagePullPolicy: Always  
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "1024Mi"
+            cpu: "500m"                      
         ports:
         - containerPort: 8080         
         env:
@@ -65,13 +73,13 @@ spec:
               configMapKeyRef:
                 name: env-config
                 key: POSTGRESS_USERNAME
-                volumeMounts:
-                  - name: aws-secret
-                    mountPath: "/root/.aws/"
-                    readOnly: true        
-                restartPolicy: Always
-                volumes:
-                  - name: aws-secret
-                    secret:
-                      secretName: aws-secret
+        volumeMounts:
+        - name: aws-secret
+          mountPath: "/root/.aws/"
+          readOnly: true        
+      restartPolicy: Always
+      volumes:
+        - name: aws-secret
+          secret:
+            secretName: aws-secret
           
