@@ -2,22 +2,22 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    service: reverse-proxy
-  name: reverse-proxy
+    service: udagram-reverse-proxy
+  name: udagram-reverse-proxy
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: reverse-proxy
+      app: udagram-reverse-proxy
   template:
     metadata:
       labels:
-        app: reverse-proxy
-        service: reverse-proxy
+        app: udagram-reverse-proxy
+        service: udagram-reverse-proxy
     spec:
       containers:
-      - image: ucast84/simple-reverse-proxy
-        name: reverse-proxy
+      - image: ucast84/udagram-reverse-proxy
+        name: udagram-reverse-proxy
         imagePullPolicy: Always          
         resources:
           requests:
@@ -28,13 +28,5 @@ spec:
             cpu: "500m"       
         ports:
         - containerPort: 8080
-        volumeMounts:
-        - name: aws-secret
-          mountPath: "/root/.aws/"
-          readOnly: true        
       restartPolicy: Always
-      volumes:
-        - name: aws-secret
-        secret:
-          secretName: aws-secret
           
