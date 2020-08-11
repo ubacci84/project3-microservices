@@ -34,7 +34,7 @@ after_success:
 
 # Scripts to be run such as tests
 before_script:
-  - cd udagram-api-user
+  - cd ../udagram-api-user
 
 script:
   - docker --version # print the version for logging
