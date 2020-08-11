@@ -12,22 +12,35 @@ install:
 # Scripts to be run such as tests
 before_script:
   - echo "no tests"
-#  - cd udagram-api-feed
+  - cd udagram-api-feed
 #  - cd udagram-frontend
 #  - cd udagram-api-user
-  - cd udagram-reverse-proxy  
+#  - cd udagram-reverse-proxy  
 
 script:
   - docker --version # print the version for logging
-#  - docker build -t udagram-api-feed .
-#  - docker tag udagram-api ucast84/udagram-api:latest
+  - docker build -t udagram-api-feed .
+  - docker tag udagram-api ucast84/udagram-api-feed:latest
 #  - docker build -t udagram-frontend .
 #  - docker tag udagram-frontend ucast84/udagram-frontend:latest
 #  - docker build -t udagram-api-user .
 #    - docker tag udagram-api-user ucast84/udagram-api-user:latest
-  - docker build -t udagram-reverse-proxy .
-  - docker tag udagram-reverse-proxy ucast84/udagram-reverse-proxy:latest
+#  - docker build -t udagram-reverse-proxy .
+#  - docker tag udagram-reverse-proxy ucast84/udagram-reverse-proxy:latest
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push ucast84/udagram-reverse-proxy
+  - docker push ucast84/udagram-api-feed
+
+# Scripts to be run such as tests
+before_script:
+  - cd udagram-api-user
+
+script:
+  - docker --version # print the version for logging
+  - docker build -t udagram-api-user .
+  - docker tag udagram-api-user ucast84/udagram-api-user:latest
+
+after_success:
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker push ucast84/udagram-api-feed
