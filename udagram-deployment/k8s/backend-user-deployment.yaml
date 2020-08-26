@@ -1,33 +1,32 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  name: api-app-user
   labels:
-    service: udagram-reverse-proxy
-  name: udagram-reverse-proxy
+    app: api-app-user
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: udagram-reverse-proxy
+      app: api-app-user
   template:
     metadata:
       labels:
-        app: udagram-reverse-proxy
-        service: udagram-reverse-proxy
+        app: api-app-user
     spec:
       containers:
-      - image: ucast84/udagram-reverse-proxy
-        name: udagram-reverse-proxy
-        imagePullPolicy: Always          
+      - name: udagram-api-user
+        image: ucast84/udagram-api-user
+        imagePullPolicy: Always  
         resources:
           requests:
             memory: "64Mi"
             cpu: "250m"
           limits:
             memory: "1024Mi"
-            cpu: "500m"       
+            cpu: "500m"              
         ports:
-        - containerPort: 8080
+          - containerPort: 8080
         env:
           - name: URL
             valueFrom:
@@ -83,5 +82,3 @@ spec:
         - name: aws-secret
           secret:
             secretName: aws-secret
-          
-          
