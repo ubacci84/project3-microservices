@@ -1,4 +1,16 @@
----
+# Part of the UDACITY Cloud Developer program
+>## _This is in preparation of the_
+>## _Microservices project submission_ !
+
+<br>
+
+***
+***
+# _Original documentation below_
+
+<br>
+
+
 # Udagram Image Filtering Application
 
 Udagram is a simple cloud application developed alongside the Udacity Cloud Engineering Nanodegree. It allows users to register and log into a web client, post photos to the feed, and process photos using an image filtering microservice.
