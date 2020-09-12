@@ -1,3 +1,28 @@
+# Screenshots for the <br>_Microservices project submission_
+
+## 1) Deployment Pipeline
+- TravisBuild-1_9.png
+- TravisBuild-2_9.png
+- TravisBuild-3_9.png
+- TravisBuild-4_9.png
+- TravisBuild-5_9.png
+- TravisBuild-6_9.png
+- TravisBuild-7_9.png
+- TravisBuild-8_9.png
+- TravisBuild-9_9.png
+- DockerImages.png
+
+## 2) Kubernetes
+
+<br>
+<br>
+
+***
+***
+# _Original documentation below_
+
+<br>
+
 # Screenshots
 To help review your infrastructure, please include the following screenshots in this directory::
 
