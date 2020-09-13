@@ -1,6 +1,9 @@
-# Screenshots for the <br>_Microservices project submission_
+# Screenshots for <br>_Microservices project submission_
 
-## 1) Deployment Pipeline
+## 1) Containers and Microservices
+- DockerImages.png
+
+## 2) Independent Releases and Deployments
 - TravisBuild-1_9.png
 - TravisBuild-2_9.png
 - TravisBuild-3_9.png
@@ -10,41 +13,17 @@
 - TravisBuild-7_9.png
 - TravisBuild-8_9.png
 - TravisBuild-9_9.png
-- DockerImages.png
 
-## 2) Kubernetes
+## 3) Service Orchestration with Kubernetes
+- Kubectl_GetPods.png
+- Kubectl_DescribeServices-1_2.png
+- Kubectl_DescribeServices-2_2.png
+- Kubectl_DescribeHPA.png
 
-<br>
-<br>
-
-***
-***
-# _Original documentation below_
-
-<br>
-
-# Screenshots
-To help review your infrastructure, please include the following screenshots in this directory::
-
-## Deployment Pipeline
-* DockerHub showing containers that you have pushed
-* GitHub repository’s settings showing your Travis webhook (can be found in Settings - Webhook)
-* Travis CI showing a successful build and deploy job
-
-## Kubernetes
-* To verify Kubernetes pods are deployed properly
-```bash
-kubectl get pods
-```
-* To verify Kubernetes services are properly set up
-```bash
-kubectl describe services
-```
-* To verify that you have horizontal scaling set against CPU usage
-```bash
-kubectl describe hpa
-```
-* To verify that you have set up logging with a backend application
-```bash
-kubectl logs {pod_name}
-```
+## 4) Debugging, Monitoring, and Logging
+- Kubectl_logs_api-app-user.png
+- Kubectl_logs_api-app-feed.png
+- Kubectl_logs_ReverseProxy-1_4.png
+- Kubectl_logs_ReverseProxy-2_4.png
+- Kubectl_logs_ReverseProxy-3_4.png
+- Kubectl_logs_ReverseProxy-4_4.png
