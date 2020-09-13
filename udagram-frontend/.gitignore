@@ -34,6 +34,7 @@ Thumbs.db
 UserInterfaceState.xcuserstate
 node_modules
 
-commit_msg.txt
+commit-msg.txt
 env-configmap.yaml
 env-secret.yaml
+aws-secret.yaml
